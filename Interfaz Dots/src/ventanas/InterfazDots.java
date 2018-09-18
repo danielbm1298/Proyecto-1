@@ -29,7 +29,7 @@ public class InterfazDots extends javax.swing.JFrame {
     public void linea (int x1, int y1, int x2, int y2){
     
     Graphics2D g = (Graphics2D)jLineas.getGraphics();
-    BasicStroke S = new BasicStroke(10.0f, BasicStroke.CAP_SQUARE, BasicStroke.CAP_SQUARE);
+    BasicStroke S = new BasicStroke(9.0f, BasicStroke.CAP_SQUARE, BasicStroke.CAP_SQUARE);
     g.setStroke(S);
     Color c = new Color( 255, 255, 255);
     g.setBackground(c);
@@ -39,6 +39,7 @@ public class InterfazDots extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLineas = new javax.swing.JPanel();
         jExit = new javax.swing.JButton();
         jContinuar = new javax.swing.JButton();
         A1 = new javax.swing.JButton();
@@ -73,12 +74,14 @@ public class InterfazDots extends javax.swing.JFrame {
         F5 = new javax.swing.JButton();
         jDOTS = new javax.swing.JLabel();
         jBG = new javax.swing.JLabel();
-        jLineas = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.darkGray);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLineas.setOpaque(false);
+        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 670));
 
         jExit.setBackground(new java.awt.Color(76, 76, 76));
         jExit.setForeground(new java.awt.Color(254, 254, 254));
@@ -453,10 +456,7 @@ public class InterfazDots extends javax.swing.JFrame {
 
         jBG.setBackground(new java.awt.Color(76, 76, 76));
         jBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/BackG.gif"))); // NOI18N
-        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -7, 520, 710));
-
-        jLineas.setOpaque(false);
-        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 690));
+        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -478,7 +478,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A5ActionPerformed
 
     private void A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_A2ActionPerformed
 
     private void A2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A2MouseClicked
@@ -634,15 +634,39 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C3MouseClicked
 
     private void C4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C4MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = C4.getX();
+            y = C4.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, C4.getX(), C4.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_C4MouseClicked
 
     private void C5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C5MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = C5.getX();
+            y = C5.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, C5.getX(), C5.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_C5MouseClicked
 
     private void D1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D1MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = D1.getX();
+            y = D1.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, D1.getX(), D1.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_D1MouseClicked
 
     private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
@@ -650,23 +674,63 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D1ActionPerformed
 
     private void D2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D2MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = D2.getX();
+            y = D2.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, D2.getX(), D2.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_D2MouseClicked
 
     private void D3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D3MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = D3.getX();
+            y = D3.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, D3.getX(), D3.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_D3MouseClicked
 
     private void D4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D4MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = D4.getX();
+            y = D4.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, D4.getX(), D4.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_D4MouseClicked
 
     private void D5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D5MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = D5.getX();
+            y = D5.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, D5.getX(), D5.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_D5MouseClicked
 
     private void E1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E1MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = E1.getX();
+            y = E1.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, E1.getX(), E1.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_E1MouseClicked
 
     private void E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E1ActionPerformed
@@ -674,23 +738,63 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E1ActionPerformed
 
     private void E2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E2MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = E2.getX();
+            y = E2.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, E2.getX(), E2.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_E2MouseClicked
 
     private void E3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E3MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = E3.getX();
+            y = E3.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, E3.getX(), E3.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_E3MouseClicked
 
     private void E4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E4MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = E4.getX();
+            y = E4.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, E4.getX(), E4.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_E4MouseClicked
 
     private void E5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E5MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = E5.getX();
+            y = E5.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, E5.getX(), E5.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_E5MouseClicked
 
     private void F1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F1MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = F1.getX();
+            y = F1.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, F1.getX(), F1.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_F1MouseClicked
 
     private void F1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1ActionPerformed
@@ -698,19 +802,51 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F1ActionPerformed
 
     private void F2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F2MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = F2.getX();
+            y = F2.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, F2.getX(), F2.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_F2MouseClicked
 
     private void F3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F3MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = F3.getX();
+            y = F3.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, F3.getX(), F3.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_F3MouseClicked
 
     private void F4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F4MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = F4.getX();
+            y = F4.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, F4.getX(), F4.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_F4MouseClicked
 
     private void F5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F5MouseClicked
-        // TODO add your handling code here:
+        if (ordenclick == 0){
+            x = F5.getX();
+            y = F5.getY();
+            ordenclick +=1;
+    
+        }else{
+            linea( x, y, F5.getX(), F5.getY());
+            ordenclick -=1;
+        }
     }//GEN-LAST:event_F5MouseClicked
 
     private void A1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A1MouseClicked
@@ -726,7 +862,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A1MouseClicked
 
     private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_A1ActionPerformed
 
     /**
