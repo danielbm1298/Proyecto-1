@@ -35,14 +35,28 @@ public class InterfazDots extends javax.swing.JFrame {
         l.setStroke(Sl);
         l.setPaint(Color.BLUE);
         l.drawLine(x1, x2, y1, y2);
-
+        
     }
+    /**
+     * Metodo para crear las figuras rellenas
+     * @param x array de puntos x de las lineas pertenecientes a la figura
+     * @param y array de puntos y de las lineas pertenecientes a la figura
+     * @param n entero cantidad de puntos que conforman la figura
+     */
     public void relleno (int x[], int y[], int n){
         Graphics2D r = (Graphics2D)jLineas.getGraphics();
         BasicStroke Sr = new BasicStroke(9.0f, BasicStroke.CAP_SQUARE, BasicStroke.CAP_SQUARE);
         r.setStroke(Sr);
         r.setPaint(Color.RED);
         r.fillPolygon(x, y, n);
+    }
+    /**
+     * Metodo para enviar al servidor la linea nueva formada
+     * @param b1 primer punto de la linea
+     * @param b2 segundo punto de la linea
+     */
+    public void eServer(javax.swing.JButton b1, javax.swing.JButton b2){
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -496,39 +510,93 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A2ActionPerformed
 
     private void A2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A2MouseClicked
-
+        if (ordenclick == 0){
+            pI = A2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,A2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_A2MouseClicked
 
     private void A3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A3MouseClicked
-
+        if (ordenclick == 0){
+            pI = A3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,A3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_A3MouseClicked
 
     private void A4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A4MouseClicked
-
+        if (ordenclick == 0){
+            pI = A4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,A4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_A4MouseClicked
 
     private void A5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A5MouseClicked
-
+        if (ordenclick == 0){
+            pI = A5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,A5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_A5MouseClicked
 
     private void B1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B1MouseClicked
-
+        if (ordenclick == 0){
+            pI = B1;
+            ordenclick+=1;
+        }else{
+            eServer(pI,B1);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_B1MouseClicked
 
     private void B2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B2MouseClicked
-
+        if (ordenclick == 0){
+            pI = B2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,B2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_B2MouseClicked
 
     private void B3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B3MouseClicked
-
+        if (ordenclick == 0){
+            pI = B3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,B3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_B3MouseClicked
 
     private void B4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B4MouseClicked
-
+        if (ordenclick == 0){
+            pI = B4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,B4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_B4MouseClicked
 
     private void B5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B5MouseClicked
-
+        if (ordenclick == 0){
+            pI = B5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,B5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_B5MouseClicked
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
@@ -536,7 +604,13 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B1ActionPerformed
 
     private void C1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C1MouseClicked
-
+        if (ordenclick == 0){
+            pI = C1;
+            ordenclick+=1;
+        }else{
+            eServer(pI,C1);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_C1MouseClicked
 
     private void C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C1ActionPerformed
@@ -544,23 +618,53 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C1ActionPerformed
 
     private void C2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C2MouseClicked
-
+        if (ordenclick == 0){
+            pI = C2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,C2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_C2MouseClicked
 
     private void C3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C3MouseClicked
-
+        if (ordenclick == 0){
+            pI = C3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,C3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_C3MouseClicked
 
     private void C4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C4MouseClicked
-
+        if (ordenclick == 0){
+            pI = C4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,C4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_C4MouseClicked
 
     private void C5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C5MouseClicked
-
+        if (ordenclick == 0){
+            pI = C5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,C5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_C5MouseClicked
 
     private void D1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D1MouseClicked
-
+        if (ordenclick == 0){
+            pI = D1;
+            ordenclick+=1;
+        }else{
+            eServer(pI,D1);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_D1MouseClicked
 
     private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
@@ -568,23 +672,53 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D1ActionPerformed
 
     private void D2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D2MouseClicked
-
+        if (ordenclick == 0){
+            pI = D2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,D2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_D2MouseClicked
 
     private void D3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D3MouseClicked
-
+        if (ordenclick == 0){
+            pI = D3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,D3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_D3MouseClicked
 
     private void D4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D4MouseClicked
-
+        if (ordenclick == 0){
+            pI = D4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,D4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_D4MouseClicked
 
     private void D5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D5MouseClicked
-
+        if (ordenclick == 0){
+            pI = D5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,D5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_D5MouseClicked
 
     private void E1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E1MouseClicked
-
+        if (ordenclick == 0){
+            pI = E1;
+            ordenclick+=1;
+        }else{
+            eServer(pI,E1);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_E1MouseClicked
 
     private void E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E1ActionPerformed
@@ -592,23 +726,53 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E1ActionPerformed
 
     private void E2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E2MouseClicked
-
+        if (ordenclick == 0){
+            pI = E2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,E2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_E2MouseClicked
 
     private void E3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E3MouseClicked
-
+        if (ordenclick == 0){
+            pI = E3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,E3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_E3MouseClicked
 
     private void E4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E4MouseClicked
-
+        if (ordenclick == 0){
+            pI = E4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,E4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_E4MouseClicked
 
     private void E5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E5MouseClicked
-
+        if (ordenclick == 0){
+            pI = E5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,E5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_E5MouseClicked
 
     private void F1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F1MouseClicked
-
+        if (ordenclick == 0){
+            pI = F1;
+            ordenclick+=1;
+        }else{
+            eServer(pI,F1);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_F1MouseClicked
 
     private void F1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1ActionPerformed
@@ -616,25 +780,53 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F1ActionPerformed
 
     private void F2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F2MouseClicked
-
+        if (ordenclick == 0){
+            pI = F2;
+            ordenclick+=1;
+        }else{
+            eServer(pI,F2);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_F2MouseClicked
 
     private void F3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F3MouseClicked
-
+        if (ordenclick == 0){
+            pI = F3;
+            ordenclick+=1;
+        }else{
+            eServer(pI,F3);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_F3MouseClicked
 
     private void F4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F4MouseClicked
-
+        if (ordenclick == 0){
+            pI = F4;
+            ordenclick+=1;
+        }else{
+            eServer(pI,F4);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_F4MouseClicked
 
     private void F5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F5MouseClicked
-       
+        if (ordenclick == 0){
+            pI = F5;
+            ordenclick+=1;
+        }else{
+            eServer(pI,F5);
+            ordenclick-=1;
+        }
     }//GEN-LAST:event_F5MouseClicked
 
     private void A1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A1MouseClicked
-    int a[] = { A1.getX(), A2.getX(), B3.getX(), C2.getX(), C1.getX()};
-    int b[] = { A1.getY(), A2.getY(), B3.getY(), C2.getY(), C1.getY()};
-        relleno(a,b,5);
+        if (ordenclick == 0){
+            pI = A1;
+            ordenclick+=1;
+        }else{
+            ordenclick-=1;
+            eServer(pI,A1);
+        }
     }//GEN-LAST:event_A1MouseClicked
 
     private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
@@ -722,5 +914,5 @@ public class InterfazDots extends javax.swing.JFrame {
     private javax.swing.JPanel jLineas;
     // End of variables declaration//GEN-END:variables
     private int ordenclick;
-    private int x, y;
+    private javax.swing.JButton pI;
 }
