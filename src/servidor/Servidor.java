@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import cliente.ColaClientes;
+
 public class Servidor implements Runnable{
 
 	public Servidor() {
@@ -27,11 +29,24 @@ public class Servidor implements Runnable{
 	@Override
 	public void run() {
 		try {
-			ServerSocket serv = new ServerSocket(4545);
+			ColaClientes cola = new ColaClientes();
+			ServerSocket serv = new ServerSocket(2626);
+			
 			Socket cli;
+			
 			int sumatoria=0; 
+			//cola.enqueue(serv.accept());
+			System.out.println("numero de clientes"+cola.len());
+
+				System.out.println("iniciando");
+	
 			while(true) {
+				
 			cli = serv.accept();
+			
+			
+			
+			
 			DataInputStream flujo= new DataInputStream(cli.getInputStream());
 			String msg=flujo.readUTF();
 			
@@ -42,7 +57,7 @@ public class Servidor implements Runnable{
 			
 			if(msg.equals("1")) {
 				sumatoria= sumatoria+1;
-				System.out.println(sumatoria);
+				System.out.println("la sumatoria es"+sumatoria);
 
 			}
 			if (sumatoria==10) {
@@ -53,6 +68,8 @@ public class Servidor implements Runnable{
 			
 			cli.close();
 			}
+			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

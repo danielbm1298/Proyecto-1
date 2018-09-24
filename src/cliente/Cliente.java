@@ -13,6 +13,8 @@ import javax.swing.*;
 public class Cliente extends JFrame implements ActionListener{ 
 	JTextArea txtmensaje;
 	JButton btnsumar;
+	private Socket clie;
+	
 	
 	public Cliente() {
 		txtmensaje = new JTextArea();
@@ -28,9 +30,10 @@ public class Cliente extends JFrame implements ActionListener{
 		setLayout(null);
 		setSize(400,400);
 		setVisible(true);
-
+//
 	}
-	
+
+
 	public static void main(String[] args) {
 		new Cliente();
 		
@@ -40,7 +43,7 @@ public class Cliente extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnsumar) {
 			try {
-				Socket clie= new Socket("localhost",4545);
+				clie= new Socket("localhost",2626);
 				DataOutputStream flujo= new DataOutputStream(clie.getOutputStream());
 				flujo.writeUTF("1");
 				DataInputStream actualiz = new DataInputStream(clie.getInputStream());
