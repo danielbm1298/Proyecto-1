@@ -38,6 +38,8 @@ public class Exe {
 				System.out.println(listaprincipal.getNode(m).getData().getNode(n).getData());
 			}
 		}
+
+		
 		
 		}	
 	}	
