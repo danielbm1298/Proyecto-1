@@ -31,6 +31,8 @@ public class Exe {
 		fila1.append(5);
 		fila1.append(6);
 		fila1.append(7);
+		fila1.printList();
+		/**
 		listaprincipal.append(fila1);
 		System.out.println("flag ");
 		for(int m = 0 ; m < listaprincipal.getLenght();m++) {
@@ -38,8 +40,8 @@ public class Exe {
 				System.out.println(listaprincipal.getNode(m).getData().getNode(n).getData());
 			}
 		}
-
-		
-		
+		**/
+		fila1.delete(7);
+		fila1.printList();
 		}	
 	}	

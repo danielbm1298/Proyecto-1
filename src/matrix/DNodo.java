@@ -2,6 +2,15 @@ package matrix;
 
 public class DNodo<T> {
 	private T data;
+	private DNodo<T> current;
+	public DNodo<T> getCurrent() {
+		return current;
+	}
+
+	public void setCurrent(DNodo<T> current) {
+		this.current = current;
+	}
+
 	private DNodo<T> previous;
 	private DNodo<T> next;
 	

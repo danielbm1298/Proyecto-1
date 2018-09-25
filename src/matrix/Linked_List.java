@@ -39,7 +39,8 @@ public class Linked_List<T> {
 			System.out.println(n.getData());
 			n = n.getNext();
 		}
-	}public Node<T> getNode(int n){
+	}
+	public Node<T> getNode(int n){
 		Node<T> current = this.root;
 		int counter = 0;
 		while(counter != n) {
@@ -47,6 +48,22 @@ public class Linked_List<T> {
 			++counter;
 		}
 		return current;
+	}
+	public void delete(int n) {
+		if(n==0) {
+			if(root.getNext() != null) {
+				Node<T> Next = root.getNext();
+				root.setNext(null);
+				root = Next;
+				--this.lenght;
+			}
+		}else{
+			Node<T> current = this.getNode(n-1);
+			Node<T> Next = current.getNext().getNext();
+			current.getNext().setNext(null);
+			current.setCurrent(Next);
+			--this.lenght;
+		}return;
 	}
 
 }

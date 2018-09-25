@@ -43,7 +43,7 @@ public class Cliente extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnsumar) {
 			try {
-				clie= new Socket("localhost",2626);
+				clie= new Socket("192.168.1.126",7878);
 				DataOutputStream flujo= new DataOutputStream(clie.getOutputStream());
 				flujo.writeUTF("1");
 				DataInputStream actualiz = new DataInputStream(clie.getInputStream());

@@ -47,4 +47,27 @@ public class Doubly_Circular_Linked_List<T> {
 			++counter;
 		}return current;
 	}
+	public void delete(int n) {
+		if(n==0) {
+			if(root.getNext() != null) {
+				DNodo<T> Next = root.getNext();
+				root.setNext(null);
+				root = Next;
+				--this.lenght;
+			}
+		}else{
+			DNodo<T> current = this.getNode(n-1);
+			DNodo<T> Next = current.getNext().getNext();
+			current.getNext().setNext(null);
+			current.setCurrent(Next);
+			--this.lenght;
+		}return;
+	}
+	public void printList() {
+		DNodo<T> n = root;
+		for(int i = 0 ; i<this.lenght;i++) {
+			System.out.println(n.getData());
+			n = n.getNext();
+		}
+	}
 }
