@@ -6,7 +6,6 @@
 package ventanas;
 import java.awt.Graphics2D;
 import java.awt.*;
-import java.lang.reflect.Field;
 /**
  *
  * @author yenson
@@ -59,39 +58,53 @@ public class InterfazDots extends javax.swing.JFrame {
     public void eServer(javax.swing.JButton b1, javax.swing.JButton b2){
         String boton1 = b1.getName();
         String boton2 = b2.getName();
-        System.out.println(b1.getName());
-        int indice;
-        if(boton1 != null && boton2 !=null){
+        int indice = 0;
         int n11 = Character.getNumericValue(boton1.charAt(1));
         int n12 = Character.getNumericValue(boton1.charAt(2));
         int n21 = Character.getNumericValue(boton2.charAt(1));
         int n22 = Character.getNumericValue(boton2.charAt(2));
-
+        int lista[] = {0,0,0,0,0,0,0,0}; 
         if (n11== n21){
-            if(n12>n22){
+            if(n12==n22+1){
                 indice = 0;
-            }else{
+                lista[indice]+=1;
+            }else if (n12+1==n22){
                 indice = 4;
-            }
-        } else if (n11> n21){
+                lista[indice]+=1;
+            }else{
+            System.out.println("Por favor no sea idiota");
+        }
+        } else if (n11== n21+1){
             if(n12==n22){
                 indice = 2;
-            }else if(n12<n22){
+                lista[indice]+=1;
+            }else if(n12+1==n22){
                 indice = 3;
-            }else if(n12>n22){
+                lista[indice]+=1;
+            }else if(n12==n22+1){
                 indice = 1;
-            }
-        } else if (n11< n21){
+                lista[indice]+=1;
+            }else{
+            System.out.println("Por favor no sea idiota");
+        }
+        } else if (n11+1== n21){
             if(n12==n22){
                 indice = 6;
-            }else if(n12<n22){
+                lista[indice]+=1;
+            }else if(n12+1==n22){
                 indice = 5;
-            }else if(n12>n22){
+                lista[indice]+=1;
+            }else if(n12==n22+1){
                 indice = 7;
-            }
+                lista[indice]+=1;
+            }else{
+            System.out.println("Por favor no sea idiota");
         }
+        }else{
+            System.out.println("Por favor no sea idiota");
+        }
+        System.out.println(lista[indice]);
     }  
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -555,6 +568,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A12MouseClicked
 
     private void A13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A13MouseClicked
+        A13.setName("A13");
         if (ordenclick == 0){
             pI = A13;
             ordenclick+=1;
@@ -565,6 +579,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A13MouseClicked
 
     private void A14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A14MouseClicked
+        A14.setName("A14");
         if (ordenclick == 0){
             pI = A14;
             ordenclick+=1;
@@ -575,6 +590,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A14MouseClicked
 
     private void A15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A15MouseClicked
+        A15.setName("A15");
         if (ordenclick == 0){
             pI = A15;
             ordenclick+=1;
@@ -585,6 +601,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_A15MouseClicked
 
     private void B21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B21MouseClicked
+        B21.setName("B21");
         if (ordenclick == 0){
             pI = B21;
             ordenclick+=1;
@@ -595,6 +612,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B21MouseClicked
 
     private void B22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B22MouseClicked
+        B22.setName("B22");
         if (ordenclick == 0){
             pI = B22;
             ordenclick+=1;
@@ -605,6 +623,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B22MouseClicked
 
     private void B23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B23MouseClicked
+        B23.setName("B23");
         if (ordenclick == 0){
             pI = B23;
             ordenclick+=1;
@@ -615,6 +634,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B23MouseClicked
 
     private void B24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B24MouseClicked
+        B24.setName("B24");
         if (ordenclick == 0){
             pI = B24;
             ordenclick+=1;
@@ -625,6 +645,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B24MouseClicked
 
     private void B25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B25MouseClicked
+        B25.setName("B25");
         if (ordenclick == 0){
             pI = B25;
             ordenclick+=1;
@@ -639,6 +660,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_B21ActionPerformed
 
     private void C31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C31MouseClicked
+        C31.setName("C31");
         if (ordenclick == 0){
             pI = C31;
             ordenclick+=1;
@@ -653,6 +675,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C31ActionPerformed
 
     private void C32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C32MouseClicked
+        C32.setName("C32");
         if (ordenclick == 0){
             pI = C32;
             ordenclick+=1;
@@ -663,6 +686,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C32MouseClicked
 
     private void C33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C33MouseClicked
+        C33.setName("C33");
         if (ordenclick == 0){
             pI = C33;
             ordenclick+=1;
@@ -673,6 +697,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C33MouseClicked
 
     private void C34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C34MouseClicked
+        C34.setName("C34");
         if (ordenclick == 0){
             pI = C34;
             ordenclick+=1;
@@ -683,6 +708,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C34MouseClicked
 
     private void C35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C35MouseClicked
+        C35.setName("C35");
         if (ordenclick == 0){
             pI = C35;
             ordenclick+=1;
@@ -693,6 +719,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_C35MouseClicked
 
     private void D41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D41MouseClicked
+        D41.setName("D41");
         if (ordenclick == 0){
             pI = D41;
             ordenclick+=1;
@@ -707,6 +734,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D41ActionPerformed
 
     private void D42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D42MouseClicked
+        D42.setName("D42");
         if (ordenclick == 0){
             pI = D42;
             ordenclick+=1;
@@ -717,6 +745,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D42MouseClicked
 
     private void D43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D43MouseClicked
+        D43.setName("D43");
         if (ordenclick == 0){
             pI = D43;
             ordenclick+=1;
@@ -727,6 +756,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D43MouseClicked
 
     private void D44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D44MouseClicked
+        D44.setName("D44");
         if (ordenclick == 0){
             pI = D44;
             ordenclick+=1;
@@ -737,6 +767,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D44MouseClicked
 
     private void D45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D45MouseClicked
+        D45.setName("D45");
         if (ordenclick == 0){
             pI = D45;
             ordenclick+=1;
@@ -747,6 +778,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_D45MouseClicked
 
     private void E51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E51MouseClicked
+        E51.setName("E51");
         if (ordenclick == 0){
             pI = E51;
             ordenclick+=1;
@@ -761,6 +793,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E51ActionPerformed
 
     private void E52MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E52MouseClicked
+        E52.setName("E52");
         if (ordenclick == 0){
             pI = E52;
             ordenclick+=1;
@@ -771,6 +804,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E52MouseClicked
 
     private void E53MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E53MouseClicked
+        E53.setName("E53");
         if (ordenclick == 0){
             pI = E53;
             ordenclick+=1;
@@ -781,6 +815,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E53MouseClicked
 
     private void E54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E54MouseClicked
+        E54.setName("E54");
         if (ordenclick == 0){
             pI = E54;
             ordenclick+=1;
@@ -791,6 +826,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E54MouseClicked
 
     private void E55MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E55MouseClicked
+        E55.setName("E55");
         if (ordenclick == 0){
             pI = E55;
             ordenclick+=1;
@@ -801,6 +837,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_E55MouseClicked
 
     private void F61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F61MouseClicked
+        F61.setName("F61");
         if (ordenclick == 0){
             pI = F61;
             ordenclick+=1;
@@ -815,7 +852,8 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F61ActionPerformed
 
     private void F62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F62MouseClicked
-        if (ordenclick == 0){
+       F62.setName("F62");
+       if (ordenclick == 0){
             pI = F62;
             ordenclick+=1;
         }else{
@@ -825,6 +863,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F62MouseClicked
 
     private void F63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F63MouseClicked
+        F63.setName("F63");
         if (ordenclick == 0){
             pI = F63;
             ordenclick+=1;
@@ -835,6 +874,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F63MouseClicked
 
     private void F64MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F64MouseClicked
+        F64.setName("F64");
         if (ordenclick == 0){
             pI = F64;
             ordenclick+=1;
@@ -845,6 +885,7 @@ public class InterfazDots extends javax.swing.JFrame {
     }//GEN-LAST:event_F64MouseClicked
 
     private void F65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F65MouseClicked
+        F65.setName("F65");
         if (ordenclick == 0){
             pI = F65;
             ordenclick+=1;
