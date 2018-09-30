@@ -4,44 +4,42 @@ public class Exe {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/**
-		Linked_List<Linked_List> listaprincipal = new Linked_List();
-		Linked_List<Integer> fila1 = new Linked_List();
-		fila1.append(0);
-		fila1.append(1);
-		fila1.append(2);
-		fila1.append(3);
-		listaprincipal.append(fila1);
+		//Lista de conecciones
+		Linked_List<Linked_List> conex = new Linked_List();
+		Linked_List<String> columna1 = new Linked_List();
+		columna1.append("C2");
+		columna1.append("C3");
+		Linked_List<String> columna2 = new Linked_List();
+		columna2.append("B2");
+		columna2.append("B1");
+		Linked_List<String> columna3 = new Linked_List();
+		columna2.append("B2");
+		columna2.append("C2");
+		Linked_List<String> columna4 = new Linked_List();
+		columna2.append("C3");
+		columna2.append("C2");
+		conex.append(columna1);
+		conex.append(columna2);
+		conex.append(columna3);
+		conex.append(columna4);
+		//Lista linea
+		Linked_List<String> lin = new Linked_List();
+		lin.append("C2");
+		lin.append("C3");
 		
-		for(int m = 0 ; m < listaprincipal.getLenght();m++) {
-			System.out.println("flago");
-			for(int n = 0; n < listaprincipal.getNode(m).getData().getLenght();n++) {
-				System.out.println(listaprincipal.getNode(m).getData().getNode(n).getData());
+		ReconocerFigura prueba = new ReconocerFigura();
+		prueba.buscar(conex, lin);
+
+		
+		
+		/**
+		for(int m = 0 ; m < conex.getLenght();m++) {
+			for(int n = 0; n < conex.getNode(m).getData().getLenght();n++) {
+				System.out.println(conex.getNode(m).getData().getNode(n).getData());
 			}
 		}
 		**/
 		
-		Linked_List<Doubly_Circular_Linked_List> listaprincipal = new Linked_List();
-		Doubly_Circular_Linked_List<Integer> fila1 = new Doubly_Circular_Linked_List();
-		fila1.append(0);
-		fila1.append(1);
-		fila1.append(2);
-		fila1.append(3);
-		fila1.append(4);
-		fila1.append(5);
-		fila1.append(6);
-		fila1.append(7);
-		fila1.printList();
-		/**
-		listaprincipal.append(fila1);
-		System.out.println("flag ");
-		for(int m = 0 ; m < listaprincipal.getLenght();m++) {
-			for(int n = 0; n < 12;n++) {
-				System.out.println(listaprincipal.getNode(m).getData().getNode(n).getData());
-			}
-		}
-		**/
-		fila1.delete(7);
-		fila1.printList();
+		
 		}	
 	}	

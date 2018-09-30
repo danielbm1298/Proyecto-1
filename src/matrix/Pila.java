@@ -6,11 +6,37 @@ public class Pila {
     Object lista;
     Node Next;
     Node Previous;
+    Object data;
 
-    public Node(Object lista) {
-      lista = lista;
+    public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	public Node(Object lista) {
+      this.lista = lista;
       Next = null;
     }
+
+	public Node getNext() {
+		return Next;
+	}
+
+	public void setNext(Node next) {
+		Next = next;
+	}
+
+	public Node getPrevious() {
+		return Previous;
+	}
+
+	public void setPrevious(Node previous) {
+		Previous = previous;
+	}
+    
   }
 
   Node root;
@@ -56,6 +82,13 @@ public class Pila {
     
     
   }
+  public void printPila() {
+		Node n = root;
+		for(int i = 0 ; i<this.len;i++) {
+			System.out.println(n.getData());
+			n = n.getNext();
+		}
+	}
   
     
    public boolean isEmpty() {

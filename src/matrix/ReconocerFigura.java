@@ -6,10 +6,10 @@ public class ReconocerFigura {
 		
 	}
 
-	public Pila buscar(Linked_List conexiones,Linked_List linea) {
-		Pila pivot=null;
-		Linked_List llegada = (Linked_List) linea.getNode(1).getData();
-		pivot.push((Linked_List) linea.getNode(0).getData());
+	public void buscar(Linked_List conexiones,Linked_List linea) {
+		Pila pivot=new Pila();
+		String llegada =(String) linea.getNode(1).getData();
+		pivot.push(linea.getNode(0).getData());
 		int indice_lista= 0;
 		Linked_List seleccionado =(Linked_List) conexiones.getNode(indice_lista).getData();
 		
@@ -37,12 +37,7 @@ public class ReconocerFigura {
 		//Eliminar el elemento de la lista del pivot y poner el indice en 0
 		pivot.pop();
 		indice_lista=0;
-		return pivot;
-		
-		
-		
-		  
-			
+		pivot.printPila();
 		
 	}
 }
