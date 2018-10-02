@@ -5,6 +5,7 @@ public class Exe {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Lista de conecciones
+		/**
 		Linked_List<Linked_List> conex = new Linked_List();
 		Linked_List<String> columna1 = new Linked_List();
 		columna1.append("C2");
@@ -30,7 +31,11 @@ public class Exe {
 		ReconocerFigura prueba = new ReconocerFigura();
 		prueba.buscar(conex, lin);
 
+<<<<<<< HEAD
 		System.out.println("terminando");
+=======
+		**/
+>>>>>>> ffd80c5b18afda8229f7402f0cac2f1735736e94
 		
 		/**
 		for(int m = 0 ; m < conex.getLenght();m++) {
@@ -40,6 +45,21 @@ public class Exe {
 		}
 		**/
 		
+		/**
+		Linked_List<Integer> listiña = new Linked_List();
+		listiña.append(0);
+		listiña.append(1);
+		listiña.append(2);
+		listiña.append(3);
+		listiña.append(4);
+		listiña.append(5);
+		listiña.append(6);
+		listiña.append(7);
+		
+		System.out.println(listiña.contains(8, listiña));
+		 **/
+
+
 		
 		}	
 	}	

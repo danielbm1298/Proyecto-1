@@ -65,5 +65,26 @@ public class Linked_List<T> {
 			--this.lenght;
 		}return;
 	}
+	public boolean contains(Object data, Linked_List list) {
+		for(int i = 0; i < list.lenght; i++) {
+			if(data == list.getNode(i).getData()) {
+				return true;
+			}
+		}
+		return false;
+	}
 
+        public void interseccion(Linked_List lista1,Linked_List lista2,Linked_List lista3){
+                Node temp1 =  null;
+                temp1 = lista1.root;
+                while (temp1.getNext() != null){
+                    if (contains(temp1.getData(),lista2)){
+                        lista3.append(temp1.getData());
+                        temp1 = temp1.getNext();
+                    }else{
+                        temp1 = temp1.getNext();
+                    }
+                        
+                }return ;
+        }
 }
