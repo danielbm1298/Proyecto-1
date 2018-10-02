@@ -55,7 +55,7 @@ public class Pila {
       root= nodo;
       root = last;
     } else {
-      root.Previous = nodo;
+      nodo.setNext(root);
       root = nodo;
     }
     len++;
@@ -78,7 +78,7 @@ public class Pila {
     if (root == null)
       return null;
     else
-      return last; 
+      return root.getData(); 
     
     
   }
