@@ -25,12 +25,12 @@ public class Exe {
 		//Lista linea
 		Linked_List<String> lin = new Linked_List();
 		lin.append("C2");
-		lin.append("C3");
+		lin.append("B3");
 		
 		ReconocerFigura prueba = new ReconocerFigura();
 		prueba.buscar(conex, lin);
 
-		
+		System.out.println("terminando");
 		
 		/**
 		for(int m = 0 ; m < conex.getLenght();m++) {

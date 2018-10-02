@@ -11,14 +11,16 @@ import java.net.UnknownHostException;
 import javax.swing.*;
 
 public class Cliente extends JFrame implements ActionListener{ 
+	int PUERTO=2485;
 	JTextArea txtmensaje;
 	JButton btnsumar;
 	private Socket clie;
+	boolean turno=true;
 	
 	
 	public Cliente() {
 		txtmensaje = new JTextArea();
-		txtmensaje.setBounds(10,10,100,20);
+		txtmensaje.setBounds(10,10,500,20);
 		add(txtmensaje);
 		
 		btnsumar = new JButton();
@@ -30,10 +32,20 @@ public class Cliente extends JFrame implements ActionListener{
 		setLayout(null);
 		setSize(400,400);
 		setVisible(true);
-//
+		try {
+			clie= new Socket("Localhost",PUERTO);
+			while(turno==true) {
+			System.out.println("RECIBIENDO");
+			DataInputStream actualiz = new DataInputStream(clie.getInputStream());
+			String sumanueva=actualiz.readUTF();
+			txtmensaje.append(sumanueva);
+			//turno=false;
+		}
+		}catch (Exception ex) {
+			System.out.println("Error en la coneccion con el servidor");
+		}
 	}
-
-
+		
 	public static void main(String[] args) {
 		new Cliente();
 		
@@ -43,14 +55,12 @@ public class Cliente extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnsumar) {
 			try {
-				clie= new Socket("192.168.1.126",7878);
 				DataOutputStream flujo= new DataOutputStream(clie.getOutputStream());
 				flujo.writeUTF("1");
-				DataInputStream actualiz = new DataInputStream(clie.getInputStream());
-				String sumanueva=actualiz.readUTF();
-				txtmensaje.removeAll();
-				txtmensaje.append(sumanueva);
-				clie.close();
+
+				System.out.println("por aqui va");
+				turno=true;
+
 			}catch (Exception ex) {
 					System.out.println("Error en la coneccion con el servidor");
 				}

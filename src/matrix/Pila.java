@@ -75,10 +75,14 @@ public class Pila {
     return len;
   }
   public Object peek() {
-    if (root == null)
+    if (root == null) {
+    	
+
       return null;
-    else
-      return last; 
+    }
+    else {
+      return last.getData(); 
+    }
     
     
   }
