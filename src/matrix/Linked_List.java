@@ -65,5 +65,12 @@ public class Linked_List<T> {
 			--this.lenght;
 		}return;
 	}
-
+	public boolean contains(Object data, Linked_List list) {
+		for(int i = 0; i < list.lenght; i++) {
+			if(data == list.getNode(i).getData()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
