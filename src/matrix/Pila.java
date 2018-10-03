@@ -15,6 +15,15 @@ public class Pila {
 	public void setData(Object data) {
 		this.data = data;
 	}
+    
+	public void setLista(Object lista) {
+		this.lista = lista;
+	}
+	
+
+	public Object getLista() {
+		return lista;
+	}
 
 	public Node(Object lista) {
       this.lista = lista;
@@ -53,10 +62,12 @@ public class Pila {
     Node nodo = new Node(lista);
     if (root == null) {
       root= nodo;
-      root = last;
+      root.setLista(lista);
+      last= root;
     } else {
       nodo.setNext(root);
       root = nodo;
+      root.setLista(lista);
     }
     len++;
   }
@@ -65,8 +76,8 @@ public class Pila {
     if (root == null){
       return null;
     }else{
-    Object lista  = last.lista;
-    last = last.Previous;
+    Object lista  = root.lista;
+    root = root.getNext();
     len--;
     return lista;
     }
@@ -76,25 +87,16 @@ public class Pila {
   }
   public Object peek() {
     if (root == null) {
-    	
-
       return null;
-<<<<<<< HEAD
     }
-    else {
-      return last.getData(); 
-    }
-=======
     else
-      return root.getData(); 
->>>>>>> ffd80c5b18afda8229f7402f0cac2f1735736e94
-    
+      return root.getLista();     
     
   }
   public void printPila() {
 		Node n = root;
 		for(int i = 0 ; i<this.len;i++) {
-			System.out.println(n.getData());
+			System.out.println(n.getLista());
 			n = n.getNext();
 		}
 	}

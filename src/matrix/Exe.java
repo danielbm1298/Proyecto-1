@@ -5,37 +5,50 @@ public class Exe {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Lista de conecciones
-		/**
+		
 		Linked_List<Linked_List> conex = new Linked_List();
 		Linked_List<String> columna1 = new Linked_List();
-		columna1.append("C2");
-		columna1.append("C3");
+		columna1.append("A2");
+		columna1.append("A3");
 		Linked_List<String> columna2 = new Linked_List();
 		columna2.append("B2");
-		columna2.append("B1");
+		columna2.append("C2");
 		Linked_List<String> columna3 = new Linked_List();
-		columna2.append("B2");
-		columna2.append("C2");
+		columna3.append("A2");
+		columna3.append("B2");
 		Linked_List<String> columna4 = new Linked_List();
-		columna2.append("C3");
-		columna2.append("C2");
+		columna4.append("A1");
+		columna4.append("A2");
+		Linked_List<String> columna5 = new Linked_List();
+		columna5.append("A3");
+		columna5.append("A4");
+		Linked_List<String> columna6 = new Linked_List();
+		columna6.append("A4");
+		columna6.append("B4");
+		Linked_List<String> columna7= new Linked_List();
+		columna7.append("C3");
+		columna7.append("C2");
+		Linked_List<String> columna8= new Linked_List();
+		columna8.append("C3");
+		columna8o.append("C4");
 		conex.append(columna1);
 		conex.append(columna2);
 		conex.append(columna3);
 		conex.append(columna4);
+		conex.append(columna5);
+		conex.append(columna6);
+		conex.append(columna7);
+		conex.append(columna8);
 		//Lista linea
 		Linked_List<String> lin = new Linked_List();
-		lin.append("C2");
-		lin.append("B3");
+		lin.append("C4");
+		lin.append("B4");
 		
 		ReconocerFigura prueba = new ReconocerFigura();
 		prueba.buscar(conex, lin);
 
-<<<<<<< HEAD
-		System.out.println("terminando");
-=======
-		**/
->>>>>>> ffd80c5b18afda8229f7402f0cac2f1735736e94
+		//System.out.println("terminando");
+		
 		
 		/**
 		for(int m = 0 ; m < conex.getLenght();m++) {
@@ -43,9 +56,9 @@ public class Exe {
 				System.out.println(conex.getNode(m).getData().getNode(n).getData());
 			}
 		}
-		**/
 		
-		/**
+		
+		
 		Linked_List<Integer> listiña = new Linked_List();
 		listiña.append(0);
 		listiña.append(1);
@@ -57,9 +70,9 @@ public class Exe {
 		listiña.append(7);
 		
 		System.out.println(listiña.contains(8, listiña));
-		 **/
+		 
 
 
-		
+		**/
 		}	
 	}	

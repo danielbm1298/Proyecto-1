@@ -50,21 +50,46 @@ public class Linked_List<T> {
 		return current;
 	}
 	public void delete(int n) {
-		if(n==0) {
-			if(root.getNext() != null) {
-				Node<T> Next = root.getNext();
-				root.setNext(null);
-				root = Next;
-				--this.lenght;
+		Node<T> temp = root;
+		if (lenght==1) {
+			root=null;
+		}
+		else{
+			
+		if (n>=lenght) {
+			throw new IllegalArgumentException("Josu");
+		}
+		else {
+			if (n==0) {
+				root = root.getNext();
+				lenght = lenght-1;
 			}
-		}else{
-			Node<T> current = this.getNode(n-1);
-			Node<T> Next = current.getNext().getNext();
-			current.getNext().setNext(null);
-			current.setCurrent(Next);
-			--this.lenght;
-		}return;
-	}
+			else {
+				if (n==lenght-1) {
+					int counter=0;
+					while(counter!=n-1) {
+						temp= temp.getNext();
+						counter+=1;
+					}
+					temp.setNext(null);
+					lenght = lenght-1;
+				}
+				else {
+						int counter=0;
+						while(counter != n-1) {
+							temp = temp.getNext();
+							counter+=1;
+						}
+						temp.setNext(temp.getNext().getNext());
+						lenght = lenght-1;
+					}
+				}
+	
+			}
+		}
+		}
+	
+		
 	public boolean contains(Object data, Linked_List list) {
 		for(int i = 0; i < list.lenght; i++) {
 			if(data == list.getNode(i).getData()) {
