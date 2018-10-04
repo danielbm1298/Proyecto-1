@@ -90,9 +90,10 @@ public class Linked_List<T> {
 		}
 	
 		
-	public boolean contains(Object data, Linked_List list) {
-		for(int i = 0; i < list.lenght; i++) {
-			if(data == list.getNode(i).getData()) {
+	public boolean contains(Linked_List conex, Linked_List listaconex) {
+            Linked_List conexx = new Linked_List();
+		for(int i = 0; i < listaconex.lenght; i++) {
+			if(conexx.isequal(conex, listaconex)) {
 				return true;
 			}
 		}
@@ -103,7 +104,7 @@ public class Linked_List<T> {
                 Node temp1 =  null;
                 temp1 = lista1.root;
                 while (temp1.getNext() != null){
-                    if (contains(temp1.getData(),lista2)){
+                    if (contains((Linked_List) temp1.getData(),lista2)){
                         lista3.append(temp1.getData());
                         temp1 = temp1.getNext();
                     }else{
