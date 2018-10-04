@@ -127,4 +127,18 @@ public class Linked_List<T> {
             
             
         }
+        public Linked_List concatenar(Linked_List lista1, Linked_List lista2){
+            for(int i=0; i<lista2.getLenght();i++){
+                lista1.append(lista2.getNode(i).getData());
+            }
+            return lista1;
+        }
+        public void delete(Object data,Linked_List lista){
+            for(int i = 0; i < lista.lenght; i++){
+                if(lista.getNode(i).getData()== data){
+                    lista.delete(i);
+                }
+                    
+            }System.out.println("Done");
+        }
 }
