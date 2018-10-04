@@ -5,27 +5,23 @@ public class ReconocerFigura {
 	public ReconocerFigura() {
 		
 	}
-
+/**
+ * a Buscar le ingresan dos listas donde la primera son todas las conexiones ya cerradas y la segunda el la ultima
+ * conexion realizada por un client, la funcion busca una linea de puntos hasta encontrar al primer elemento y 
+ * el ultimo
+ * @param conexiones
+ * @param linea
+ * @return retorna una pila con todos los puntos que corresponden a la figua cerrada o 
+ * su no hay figura cerrada devuelve una pila con la conexion que se realizo para luego enviarselo al cliente
+ */
 	public Pila buscar(Linked_List<Linked_List> conexiones,Linked_List<String> linea) {
 		Pila pivot=new Pila();
 		String llegada =(String) linea.getNode(1).getData();
 		String primer_pivot = new String();
 		primer_pivot =linea.getNode(0).getData();
 		pivot.push(primer_pivot);
-		Linked_List<String> prueba =new Linked_List();
-		prueba.append("A2");
-		prueba.append("A1");
 
-		Linked_List<String> prueba2 =new Linked_List();
-		prueba2.append("A2");
-		prueba2.append("A1");
 
-		if (prueba==prueba2) {
-			System.out.println("SI SON IGUALES");
-		}else {
-			System.out.println("no son iguales QUE PICHA");
-			
-		}
 
 
 
@@ -46,7 +42,7 @@ public class ReconocerFigura {
 		
 		while (conexiones.getLenght()!=indice_lista) {
 			if (pivot.peek()==llegada) {
-				System.out.println("termino");
+				System.out.println("termino ");
 				pivot.printPila();
 				return pivot;
 			}
@@ -80,9 +76,15 @@ public class ReconocerFigura {
 		}
 
 		}
-		System.out.println("Terminó el while");
-		if (pivot.peek()==llegada) {
-			System.out.println("terminó");
+		System.out.println("Termina el while");
+		if (pivot.peek()!=llegada) {
+			System.out.println("no hay ninguna figura");
+			Pila co_inicial =new Pila();
+			co_inicial.push(primer_pivot);
+			co_inicial.push(llegada);
+			return co_inicial;
+			
+
 		}
 		else {
 		pivot.pop();
@@ -96,14 +98,27 @@ public class ReconocerFigura {
 		}
 		//Eliminar el elemento de la lista del pivot y poner el indice en 0
 		return pivot;
+		
 
-	
-
-
-
-	
+		
 	}
+		
+			
 	
+		
+
+	
+
+
+
+	
+	
+	/**
+	 * funcion que convierte la pila de puntos de una figura en una lista con conexiones para luego compararlas
+	 * y descartar las que no se deben analizar
+	 * @param pila
+	 * @return retorna una lista con listas
+	 */
 	public Linked_List conex_en_fig(Pila pila) {
 		Linked_List<Linked_List> conex_de_fig =new Linked_List();
 		String primer_elemento=(String) pila.peek();
@@ -135,6 +150,22 @@ public class ReconocerFigura {
 		return conex_de_fig;
 	}
 	
+/**
+ * funcion que le ingresa una pila devuelve un string con los elementos de la pila
+ * @param pila
+ * @return retorna un string con los elementos de esa pila separados por coma
+ */
+	public String convertir_a_string(Pila pila) {
+		String figura_para_graficar="";
 
-	
+		while(pila.len!=1) {
+			figura_para_graficar=figura_para_graficar+pila.peek()+",";
+			pila.pop();	
+		}
+		figura_para_graficar=figura_para_graficar+pila.peek();
+		return figura_para_graficar;
+
+		
+	}
+
 }
