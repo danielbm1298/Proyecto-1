@@ -64,8 +64,9 @@ public class InterfazDots extends javax.swing.JFrame {
         int n21 = Character.getNumericValue(boton2.charAt(1));
         int n22 = Character.getNumericValue(boton2.charAt(2));
         int lista[] = {0,0,0,0,0,0,0,0}; 
-        String boton1S;
-        String boton2S;
+        String puntos[] = {"",""};
+        String boton1S = "";
+        String boton2S = "";
         boolean lineaValida = false;
         
         if (n11== n21){
@@ -77,9 +78,7 @@ public class InterfazDots extends javax.swing.JFrame {
                 indice = 4;
                 lista[indice]+=1;
                 lineaValida = true;
-            }else{
-            System.out.println("Por favor ingrese una linea valida");
-        }
+            }
         } else if (n11== n21+1){
             if(n12==n22){
                 indice = 2;
@@ -93,9 +92,7 @@ public class InterfazDots extends javax.swing.JFrame {
                 indice = 1;
                 lista[indice]+=1;
                 lineaValida = true;
-            }else{
-            System.out.println("Por favor ingrese una linea valida");
-        }
+            }
         } else if (n11+1== n21){
             if(n12==n22){
                 indice = 6;
@@ -109,13 +106,25 @@ public class InterfazDots extends javax.swing.JFrame {
                 indice = 7;
                 lista[indice]+=1;
                 lineaValida = true;
-            }else{
-            System.out.println("Por favor realice una linea valida");
+            }
         }
+        
+        if (lineaValida){
+            boton1S = Character.toString(boton1.charAt(0))+Character.toString(boton1.charAt(2));
+            boton2S = Character.toString(boton2.charAt(0))+Character.toString(boton2.charAt(2));
         }else{
-            System.out.println("Por favor realice una linea valida");
+            System.out.println("Por Favor ingrese una linea valida");
         }
-        System.out.println(lista[indice]);
+        
+        if(Character.getNumericValue(boton1S.charAt(1))<Character.getNumericValue(boton2S.charAt(1))){
+            puntos[0]=boton1S;
+            puntos[1]=boton2S;
+        } else{
+            puntos[0]=boton2S;
+            puntos[1]=boton1S;
+        }
+        System.out.println(boton1S);
+        System.out.println(boton2S);
     }  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -127,27 +136,18 @@ public class InterfazDots extends javax.swing.JFrame {
         A12 = new javax.swing.JButton();
         A13 = new javax.swing.JButton();
         A14 = new javax.swing.JButton();
-        A15 = new javax.swing.JButton();
         B21 = new javax.swing.JButton();
         B22 = new javax.swing.JButton();
         B23 = new javax.swing.JButton();
         B24 = new javax.swing.JButton();
-        B25 = new javax.swing.JButton();
         C31 = new javax.swing.JButton();
         C32 = new javax.swing.JButton();
         C33 = new javax.swing.JButton();
         C34 = new javax.swing.JButton();
-        C35 = new javax.swing.JButton();
         D41 = new javax.swing.JButton();
         D42 = new javax.swing.JButton();
         D43 = new javax.swing.JButton();
         D44 = new javax.swing.JButton();
-        D45 = new javax.swing.JButton();
-        E51 = new javax.swing.JButton();
-        E52 = new javax.swing.JButton();
-        E53 = new javax.swing.JButton();
-        E54 = new javax.swing.JButton();
-        E55 = new javax.swing.JButton();
         jLineas = new javax.swing.JPanel();
         jDOTS = new javax.swing.JLabel();
         jBG = new javax.swing.JLabel();
@@ -165,7 +165,7 @@ public class InterfazDots extends javax.swing.JFrame {
                 jExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 80, -1));
+        getContentPane().add(jExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jContinuar.setBackground(new java.awt.Color(254, 254, 254));
         jContinuar.setForeground(new java.awt.Color(85, 85, 85));
@@ -175,7 +175,7 @@ public class InterfazDots extends javax.swing.JFrame {
                 jContinuarActionPerformed(evt);
             }
         });
-        getContentPane().add(jContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(jContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         A11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
         A11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -237,21 +237,6 @@ public class InterfazDots extends javax.swing.JFrame {
         });
         getContentPane().add(A14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
-        A15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        A15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        A15.setBorderPainted(false);
-        A15.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                A15MouseClicked(evt);
-            }
-        });
-        A15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A15ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(A15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
-
         B21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
         B21.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         B21.setBorderPainted(false);
@@ -296,16 +281,6 @@ public class InterfazDots extends javax.swing.JFrame {
             }
         });
         getContentPane().add(B24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
-
-        B25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        B25.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        B25.setBorderPainted(false);
-        B25.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                B25MouseClicked(evt);
-            }
-        });
-        getContentPane().add(B25, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
 
         C31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
         C31.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -352,16 +327,6 @@ public class InterfazDots extends javax.swing.JFrame {
         });
         getContentPane().add(C34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
-        C35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        C35.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        C35.setBorderPainted(false);
-        C35.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                C35MouseClicked(evt);
-            }
-        });
-        getContentPane().add(C35, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
-
         D41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
         D41.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         D41.setBorderPainted(false);
@@ -407,83 +372,19 @@ public class InterfazDots extends javax.swing.JFrame {
         });
         getContentPane().add(D44, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, -1, -1));
 
-        D45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        D45.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        D45.setBorderPainted(false);
-        D45.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                D45MouseClicked(evt);
-            }
-        });
-        getContentPane().add(D45, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 420, -1, -1));
-
-        E51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        E51.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        E51.setBorderPainted(false);
-        E51.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                E51MouseClicked(evt);
-            }
-        });
-        E51.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                E51ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(E51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
-
-        E52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        E52.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        E52.setBorderPainted(false);
-        E52.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                E52MouseClicked(evt);
-            }
-        });
-        getContentPane().add(E52, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, -1, -1));
-
-        E53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        E53.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        E53.setBorderPainted(false);
-        E53.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                E53MouseClicked(evt);
-            }
-        });
-        getContentPane().add(E53, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, -1, -1));
-
-        E54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        E54.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        E54.setBorderPainted(false);
-        E54.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                E54MouseClicked(evt);
-            }
-        });
-        getContentPane().add(E54, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, -1));
-
-        E55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        E55.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        E55.setBorderPainted(false);
-        E55.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                E55MouseClicked(evt);
-            }
-        });
-        getContentPane().add(E55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
-
         jLineas.setOpaque(false);
-        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 8, 510, 560));
+        jLineas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 8, 390, 450));
 
         jDOTS.setBackground(new java.awt.Color(252, 249, 246));
         jDOTS.setFont(new java.awt.Font("aakar", 1, 50)); // NOI18N
         jDOTS.setForeground(new java.awt.Color(72, 72, 72));
         jDOTS.setText("DOTS");
-        getContentPane().add(jDOTS, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
+        getContentPane().add(jDOTS, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 140, -1));
 
         jBG.setBackground(new java.awt.Color(76, 76, 76));
         jBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg_1.jpg"))); // NOI18N
-        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 580));
+        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -499,10 +400,6 @@ public class InterfazDots extends javax.swing.JFrame {
     private void A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_A14ActionPerformed
-
-    private void A15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_A15ActionPerformed
 
     private void A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A12ActionPerformed
 
@@ -540,17 +437,6 @@ public class InterfazDots extends javax.swing.JFrame {
             ordenclick-=1;
         }
     }//GEN-LAST:event_A14MouseClicked
-
-    private void A15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A15MouseClicked
-        A15.setName("A15");
-        if (ordenclick == 0){
-            pI = A15;
-            ordenclick+=1;
-        }else{
-            eServer(pI,A15);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_A15MouseClicked
 
     private void B21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B21MouseClicked
         B21.setName("B21");
@@ -595,17 +481,6 @@ public class InterfazDots extends javax.swing.JFrame {
             ordenclick-=1;
         }
     }//GEN-LAST:event_B24MouseClicked
-
-    private void B25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B25MouseClicked
-        B25.setName("B25");
-        if (ordenclick == 0){
-            pI = B25;
-            ordenclick+=1;
-        }else{
-            eServer(pI,B25);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_B25MouseClicked
 
     private void B21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B21ActionPerformed
         // TODO add your handling code here:
@@ -659,17 +534,6 @@ public class InterfazDots extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_C34MouseClicked
 
-    private void C35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C35MouseClicked
-        C35.setName("C35");
-        if (ordenclick == 0){
-            pI = C35;
-            ordenclick+=1;
-        }else{
-            eServer(pI,C35);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_C35MouseClicked
-
     private void D41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D41MouseClicked
         D41.setName("D41");
         if (ordenclick == 0){
@@ -717,76 +581,6 @@ public class InterfazDots extends javax.swing.JFrame {
             ordenclick-=1;
         }
     }//GEN-LAST:event_D44MouseClicked
-
-    private void D45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_D45MouseClicked
-        D45.setName("D45");
-        if (ordenclick == 0){
-            pI = D45;
-            ordenclick+=1;
-        }else{
-            eServer(pI,D45);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_D45MouseClicked
-
-    private void E51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E51MouseClicked
-        E51.setName("E51");
-        if (ordenclick == 0){
-            pI = E51;
-            ordenclick+=1;
-        }else{
-            eServer(pI,E51);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_E51MouseClicked
-
-    private void E51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E51ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_E51ActionPerformed
-
-    private void E52MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E52MouseClicked
-        E52.setName("E52");
-        if (ordenclick == 0){
-            pI = E52;
-            ordenclick+=1;
-        }else{
-            eServer(pI,E52);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_E52MouseClicked
-
-    private void E53MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E53MouseClicked
-        E53.setName("E53");
-        if (ordenclick == 0){
-            pI = E53;
-            ordenclick+=1;
-        }else{
-            eServer(pI,E53);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_E53MouseClicked
-
-    private void E54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E54MouseClicked
-        E54.setName("E54");
-        if (ordenclick == 0){
-            pI = E54;
-            ordenclick+=1;
-        }else{
-            eServer(pI,E54);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_E54MouseClicked
-
-    private void E55MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_E55MouseClicked
-        E55.setName("E55");
-        if (ordenclick == 0){
-            pI = E55;
-            ordenclick+=1;
-        }else{
-            eServer(pI,E55);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_E55MouseClicked
 
     private void A11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A11MouseClicked
         A11.setName("A11");
@@ -845,27 +639,18 @@ public class InterfazDots extends javax.swing.JFrame {
     protected javax.swing.JButton A12;
     protected javax.swing.JButton A13;
     protected javax.swing.JButton A14;
-    protected javax.swing.JButton A15;
     protected javax.swing.JButton B21;
     protected javax.swing.JButton B22;
     protected javax.swing.JButton B23;
     protected javax.swing.JButton B24;
-    protected javax.swing.JButton B25;
     protected javax.swing.JButton C31;
     protected javax.swing.JButton C32;
     protected javax.swing.JButton C33;
     protected javax.swing.JButton C34;
-    protected javax.swing.JButton C35;
     protected javax.swing.JButton D41;
     protected javax.swing.JButton D42;
     protected javax.swing.JButton D43;
     protected javax.swing.JButton D44;
-    protected javax.swing.JButton D45;
-    protected javax.swing.JButton E51;
-    protected javax.swing.JButton E52;
-    protected javax.swing.JButton E53;
-    protected javax.swing.JButton E54;
-    protected javax.swing.JButton E55;
     private javax.swing.JLabel jBG;
     protected javax.swing.JButton jContinuar;
     private javax.swing.JLabel jDOTS;
