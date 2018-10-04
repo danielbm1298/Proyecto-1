@@ -64,44 +64,56 @@ public class InterfazDots extends javax.swing.JFrame {
         int n21 = Character.getNumericValue(boton2.charAt(1));
         int n22 = Character.getNumericValue(boton2.charAt(2));
         int lista[] = {0,0,0,0,0,0,0,0}; 
+        String boton1S;
+        String boton2S;
+        boolean lineaValida = false;
+        
         if (n11== n21){
             if(n12==n22+1){
                 indice = 0;
                 lista[indice]+=1;
+                lineaValida = true;
             }else if (n12+1==n22){
                 indice = 4;
                 lista[indice]+=1;
+                lineaValida = true;
             }else{
-            System.out.println("Por favor no sea idiota");
+            System.out.println("Por favor ingrese una linea valida");
         }
         } else if (n11== n21+1){
             if(n12==n22){
                 indice = 2;
                 lista[indice]+=1;
+                lineaValida = true;
             }else if(n12+1==n22){
                 indice = 3;
                 lista[indice]+=1;
+                lineaValida = true;
             }else if(n12==n22+1){
                 indice = 1;
                 lista[indice]+=1;
+                lineaValida = true;
             }else{
-            System.out.println("Por favor no sea idiota");
+            System.out.println("Por favor ingrese una linea valida");
         }
         } else if (n11+1== n21){
             if(n12==n22){
                 indice = 6;
                 lista[indice]+=1;
+                lineaValida = true;
             }else if(n12+1==n22){
                 indice = 5;
                 lista[indice]+=1;
+                lineaValida = true;
             }else if(n12==n22+1){
                 indice = 7;
                 lista[indice]+=1;
+                lineaValida = true;
             }else{
-            System.out.println("Por favor no sea idiota");
+            System.out.println("Por favor realice una linea valida");
         }
         }else{
-            System.out.println("Por favor no sea idiota");
+            System.out.println("Por favor realice una linea valida");
         }
         System.out.println(lista[indice]);
     }  
@@ -136,11 +148,6 @@ public class InterfazDots extends javax.swing.JFrame {
         E53 = new javax.swing.JButton();
         E54 = new javax.swing.JButton();
         E55 = new javax.swing.JButton();
-        F61 = new javax.swing.JButton();
-        F62 = new javax.swing.JButton();
-        F63 = new javax.swing.JButton();
-        F64 = new javax.swing.JButton();
-        F65 = new javax.swing.JButton();
         jLineas = new javax.swing.JPanel();
         jDOTS = new javax.swing.JLabel();
         jBG = new javax.swing.JLabel();
@@ -465,63 +472,8 @@ public class InterfazDots extends javax.swing.JFrame {
         });
         getContentPane().add(E55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
 
-        F61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        F61.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        F61.setBorderPainted(false);
-        F61.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                F61MouseClicked(evt);
-            }
-        });
-        F61.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F61ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(F61, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, -1, -1));
-
-        F62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        F62.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        F62.setBorderPainted(false);
-        F62.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                F62MouseClicked(evt);
-            }
-        });
-        getContentPane().add(F62, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, -1, -1));
-
-        F63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        F63.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        F63.setBorderPainted(false);
-        F63.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                F63MouseClicked(evt);
-            }
-        });
-        getContentPane().add(F63, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 640, -1, -1));
-
-        F64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        F64.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        F64.setBorderPainted(false);
-        F64.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                F64MouseClicked(evt);
-            }
-        });
-        getContentPane().add(F64, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 640, -1, -1));
-
-        F65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dot.png"))); // NOI18N
-        F65.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        F65.setBorderPainted(false);
-        F65.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                F65MouseClicked(evt);
-            }
-        });
-        getContentPane().add(F65, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 640, -1, -1));
-
         jLineas.setOpaque(false);
-        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 8, 510, 690));
+        getContentPane().add(jLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 8, 510, 560));
 
         jDOTS.setBackground(new java.awt.Color(252, 249, 246));
         jDOTS.setFont(new java.awt.Font("aakar", 1, 50)); // NOI18N
@@ -531,7 +483,7 @@ public class InterfazDots extends javax.swing.JFrame {
 
         jBG.setBackground(new java.awt.Color(76, 76, 76));
         jBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg_1.jpg"))); // NOI18N
-        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 700));
+        getContentPane().add(jBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -836,65 +788,6 @@ public class InterfazDots extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_E55MouseClicked
 
-    private void F61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F61MouseClicked
-        F61.setName("F61");
-        if (ordenclick == 0){
-            pI = F61;
-            ordenclick+=1;
-        }else{
-            eServer(pI,F61);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_F61MouseClicked
-
-    private void F61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F61ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F61ActionPerformed
-
-    private void F62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F62MouseClicked
-       F62.setName("F62");
-       if (ordenclick == 0){
-            pI = F62;
-            ordenclick+=1;
-        }else{
-            eServer(pI,F62);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_F62MouseClicked
-
-    private void F63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F63MouseClicked
-        F63.setName("F63");
-        if (ordenclick == 0){
-            pI = F63;
-            ordenclick+=1;
-        }else{
-            eServer(pI,F63);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_F63MouseClicked
-
-    private void F64MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F64MouseClicked
-        F64.setName("F64");
-        if (ordenclick == 0){
-            pI = F64;
-            ordenclick+=1;
-        }else{
-            eServer(pI,F64);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_F64MouseClicked
-
-    private void F65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_F65MouseClicked
-        F65.setName("F65");
-        if (ordenclick == 0){
-            pI = F65;
-            ordenclick+=1;
-        }else{
-            eServer(pI,F65);
-            ordenclick-=1;
-        }
-    }//GEN-LAST:event_F65MouseClicked
-
     private void A11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A11MouseClicked
         A11.setName("A11");
         if (ordenclick == 0){
@@ -931,16 +824,10 @@ public class InterfazDots extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazDots.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazDots.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazDots.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(InterfazDots.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -979,11 +866,6 @@ public class InterfazDots extends javax.swing.JFrame {
     protected javax.swing.JButton E53;
     protected javax.swing.JButton E54;
     protected javax.swing.JButton E55;
-    protected javax.swing.JButton F61;
-    protected javax.swing.JButton F62;
-    protected javax.swing.JButton F63;
-    protected javax.swing.JButton F64;
-    protected javax.swing.JButton F65;
     private javax.swing.JLabel jBG;
     protected javax.swing.JButton jContinuar;
     private javax.swing.JLabel jDOTS;
