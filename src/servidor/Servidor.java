@@ -8,6 +8,7 @@ import java.net.Socket;
 
 import cliente.ColaClientes;
 import matrix.Linked_List;
+import matrix.ReconocerFigura;
 
 public class Servidor implements Runnable{
 	int PUERTO=2485;
@@ -24,7 +25,33 @@ public class Servidor implements Runnable{
 	}
 
 	public static void main(String[] args) {
+            
 		new Servidor();
+                
+                Linked_List conexTotal = new Linked_List();
+                Linked_List conexFig = new Linked_List();
+                Linked_List var = new Linked_List();
+
+                ReconocerFigura reconocerFigura = new ReconocerFigura();
+
+                
+                /**cada vez que ingrese un nuevo dato
+                 *                  */
+                msg = ultconex;                         
+                conexTotal.append(ultconex);
+                if (var.contains(ultconex, conexFig)){
+                    var.delete(ultconex, conexTotal);
+                }
+                var.concatenar(conexFig,reconocerFigura.buscar(conexTotal, ultconex));
+
+                
+
+                
+                
+                
+                
+        
+                
 	
 	}
 
@@ -109,4 +136,11 @@ public class Servidor implements Runnable{
 		
 		
 	}
+        public void stringtoList(){
+            el1=Character.toString(msg.charAt(0))+Character.toString(msg.charAt(1));
+            
+        }
+        
+        
+        
 }
