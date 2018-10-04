@@ -8,6 +8,7 @@ import java.net.Socket;
 
 import cliente.ColaClientes;
 import matrix.Linked_List;
+import matrix.ReconocerFigura;
 
 public class Servidor implements Runnable{
 	int PUERTO=2485;
@@ -24,9 +25,97 @@ public class Servidor implements Runnable{
 	}
 
 	public static void main(String[] args) {
+            
 		new Servidor();
+                
+          
 	
 	}
+        static Linked_List ultima_conex = new Linked_List();
+        public Linked_List stringtoList(){
+            String el1=Character.toString(msg.charAt(0))+Character.toString(msg.charAt(1));
+            String el2=Character.toString(msg.charAt(3))+Character.toString(msg.charAt(4));
+            Linked_List<String>  ultima_conex =new Linked_List();
+            ultima_conex.append(el1);
+            ultima_conex.append(el2);
+            return ultima_conex;
+            
+        }
+        public static void bloquearborde(Linked_List listaconex){
+            Linked_List prueba = new Linked_List();
+                Linked_List<String> listaA1A2= new Linked_List();
+                listaA1A2.append("A1");
+                listaA1A2.append("A2");
+                Linked_List<String> listaA2A3= new Linked_List();
+                listaA2A3.append("A2");
+                listaA2A3.append("A3");
+                Linked_List<String> listaA3A4= new Linked_List();
+                listaA3A4.append("A3");
+                listaA3A4.append("A4");
+                Linked_List<String> listaA4B4= new Linked_List();
+                listaA4B4.append("A4");
+                listaA4B4.append("B4");
+                Linked_List<String> listaB4C4= new Linked_List();
+                listaB4C4.append("B4");
+                listaB4C4.append("C4");
+                Linked_List<String> listaC4D4= new Linked_List();
+                listaC4D4.append("C4");
+                listaC4D4.append("D4");
+                Linked_List<String> listaD3D4= new Linked_List();
+                listaD3D4.append("D3");
+                listaD3D4.append("D4");
+                Linked_List<String> listaD2D3= new Linked_List();
+                listaD2D3.append("D2");
+                listaD2D3.append("D3");
+                Linked_List<String> listaD1D2= new Linked_List();
+                listaD1D2.append("D1");
+                listaD1D2.append("D2");
+                Linked_List<String> listaA1B1= new Linked_List();
+                listaA1B1.append("A1");
+                listaA1B1.append("B1");
+                Linked_List<String> listaB1C1= new Linked_List();
+                listaB1C1.append("B1");
+                listaB1C1.append("C1");
+                Linked_List<String> listaC1D1= new Linked_List();
+                listaC1D1.append("C1");
+                listaC1D1.append("D1");
+                
+                
+                if(prueba.isequal(ultima_conex, listaA1A2)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }
+                
+                else if(prueba.isequal(ultima_conex,listaA2A3)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }
+                else if(prueba.isequal(ultima_conex, listaA3A4)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }
+                else if(prueba.isequal(ultima_conex, listaA4B4)){
+                    listaconex.delete(listaconex, ultima_conex);
+                }else if(prueba.isequal(ultima_conex, listaB4C4)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }
+                else if(prueba.isequal(ultima_conex, listaC4D4)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaD3D4)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaD2D3)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaD1D2)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaA1B1)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaB1C1)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }else if(prueba.isequal(ultima_conex, listaC1D1)){
+                    listaconex.delete(listaconex, ultima_conex);
+                    }
+                return;
+                    
+                          
+                       
+        }
 
 
 	@Override
@@ -68,6 +157,18 @@ public class Servidor implements Runnable{
 				DataInputStream flujo2= new DataInputStream(cola.getNode(1).getData().getInputStream());
 				String msg2=flujo2.readUTF();
 			}
+                        Linked_List conexTotal = new Linked_List();
+                        Linked_List conexFig = new Linked_List();
+                        Linked_List var = new Linked_List();
+
+                        ReconocerFigura reconocerFigura = new ReconocerFigura();
+                        
+                        conexTotal.append(ultima_conex);
+                        if (var.contains(ultima_conex, conexFig)){
+                        var.delete(ultima_conex, conexTotal);
+                        }
+                        var.concatenar(conexFig,reconocerFigura.conex_en_fig(reconocerFigura.buscar(conexTotal, ultima_conex)));
+                        bloquearborde(conexTotal);
 
 			
 			
@@ -109,4 +210,8 @@ public class Servidor implements Runnable{
 		
 		
 	}
+      
+        
+        
+        
 }

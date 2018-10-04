@@ -11,12 +11,27 @@ public class ReconocerFigura {
          * @param linea 
          */
 
-	public void buscar(Linked_List<Linked_List> conexiones,Linked_List<String> linea) {
+	public Pila buscar(Linked_List<Linked_List> conexiones,Linked_List<String> linea) {
 		Pila pivot=new Pila();
 		String llegada =(String) linea.getNode(1).getData();
 		String primer_pivot = new String();
 		primer_pivot =linea.getNode(0).getData();
 		pivot.push(primer_pivot);
+		Linked_List<String> prueba =new Linked_List();
+		prueba.append("A2");
+		prueba.append("A1");
+
+		Linked_List<String> prueba2 =new Linked_List();
+		prueba2.append("A2");
+		prueba2.append("A1");
+
+		if (prueba==prueba2) {
+			System.out.println("SI SON IGUALES");
+		}else {
+			System.out.println("no son iguales");
+			
+		}
+
 
 
 	
@@ -38,7 +53,7 @@ public class ReconocerFigura {
 			if (pivot.peek()==llegada) {
 				System.out.println("termino");
 				pivot.printPila();
-				return;
+				return pivot;
 			}
 			Linked_List<Linked_List> seleccionado =(Linked_List) conexiones.getNode(indice_lista).getData();
 
@@ -70,9 +85,9 @@ public class ReconocerFigura {
 		}
 
 		}
-		System.out.println("Termin� el while");
+		System.out.println("Terminó el while");
 		if (pivot.peek()==llegada) {
-			System.out.println("termin�");
+			System.out.println("terminó");
 		}
 		else {
 		pivot.pop();
@@ -85,6 +100,7 @@ public class ReconocerFigura {
 			System.out.println("imprimendo figura completa");
 		}
 		//Eliminar el elemento de la lista del pivot y poner el indice en 0
+		return pivot;
 
 	
 
@@ -92,6 +108,41 @@ public class ReconocerFigura {
 
 	
 	}
+	
+	public Linked_List conex_en_fig(Pila pila) {
+		Linked_List<Linked_List> conex_de_fig =new Linked_List();
+		String primer_elemento=(String) pila.peek();
+		while (pila.len()!=1) {
+			Linked_List<String> elem =new Linked_List();
+			elem.append((String) pila.peek());
+			System.out.println("añadiendo " +pila.peek());
+
+			pila.pop();
+			
+			elem.append((String) pila.peek());
+			System.out.println("añadiendo " +pila.peek());
+			conex_de_fig.append(elem);
+			System.out.println("añadiendo a la principal");
+			elem.printList();
+
+			
+		}
+		Linked_List<String> ultima =new Linked_List();
+		ultima.append(primer_elemento);
+		System.out.println(primer_elemento);
+		ultima.append((String) pila.peek());
+		System.out.println(pila.peek());
+
+		conex_de_fig.append(ultima);
+		
+		conex_de_fig.printList();
+		System.out.println("LISTA YA LISTA");
+		return conex_de_fig;
+	}
+	
+
+	
+
         /**
          * metodo que elimina las conexiones que estan ya bloqueadas de la lista de conexiones del juego, esto para evitar que a la hora de analizar si una figura esta cerrada o no, tome el camino de la figura nueva o no siga en el camino de una figura ya cerrada
          * @param listaconex
@@ -105,49 +156,19 @@ public class ReconocerFigura {
             }
             
         }
+        public String convertir_a_string(Pila pila) {
+		String figura_para_graficar="";
+
+		while(pila.len!=1) {
+			figura_para_graficar=figura_para_graficar+pila.peek()+",";
+			pila.pop();	
+		}
+		figura_para_graficar=figura_para_graficar+pila.peek();
+		return figura_para_graficar;
+
+		
+	}
         
-       /** public void bloquearborde(Linked_List listaconex){
-            Linked_List prueba = new Linked_List();
-                if(prueba.isequal(entrada, [A1,A2]){
-                    listaconex.delete(listaconex, entrada)
-                    }else{
-                if(prueba.isequal(entrada, [A2,A3]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [A3,A4]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [A4,B4]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [B4,C4]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [C4,D4]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [D4,D3]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [D3,D2]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [D1,D2]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [A1,B1]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [B1,C1]){
-                    listaconex.delete(listaconex, entrada)
-                    }}else{
-                if(prueba.isequal(entrada, [C1,D1]){
-                    listaconex.delete(listaconex, entrada)
-                    }}
-                return;
-                    * 
-                          
-                       
-        }
+       /** 
         /**/
 }
