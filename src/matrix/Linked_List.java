@@ -112,4 +112,18 @@ public class Linked_List<T> {
                         
                 }return ;
         }
+        public boolean isequal(Linked_List conex1, Linked_List conex2){
+            if ((conex1.getNode(0).getData() == conex2.getNode(0).getData()) &&(conex1.getNode(1).getData() == conex2.getNode(1).getData())){
+                return true;
+            }else{ if((conex1.getNode(0).getData() == conex2.getNode(1).getData()) &&(conex1.getNode(1).getData() == conex2.getNode(0).getData())){
+                return true;
+            }else{
+                return false;
+            }
+            
+                
+            }
+            
+            
+        }
 }
