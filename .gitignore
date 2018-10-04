@@ -1,4 +1,8 @@
 /Cliente/InterfazDots/build/
 /Cliente/InterfazDots/nbproject/private/
+<<<<<<< HEAD
 /Servidor/build/
 /Servidor/nbproject/private/
+=======
+/dist/
+>>>>>>> 1cf649ce478f56e900847aa5f8e624827e4a21ab

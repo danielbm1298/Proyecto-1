@@ -16,6 +16,10 @@ public class Linked_List<T> {
 	public void setLenght(int lenght) {
 		this.lenght = lenght;
 	}
+        /**
+         * metodo que agrega objetos a la lista
+         * @param new_data 
+         */
 	public void append(T new_data) {
 		Node<T> new_node = new Node<T>(new_data);
 		if(root == null) {
@@ -33,6 +37,9 @@ public class Linked_List<T> {
 		++this.lenght;
 		return;
 	}
+        /**
+         * metodo que imprime en consola la lista
+         */
 	public void printList() {
 		Node<T> n = root;
 		for(int i = 0 ; i<this.lenght;i++) {
@@ -40,6 +47,11 @@ public class Linked_List<T> {
 			n = n.getNext();
 		}
 	}
+        /**
+         * metodo que busca el objeto en el indice especifico (n)
+         * @param n
+         * @return 
+         */
 	public Node<T> getNode(int n){
 		Node<T> current = this.root;
 		int counter = 0;
@@ -49,6 +61,10 @@ public class Linked_List<T> {
 		}
 		return current;
 	}
+        /**
+         * metodo que elimina el nodo que esta en el indice especifico (n)
+         * @param n 
+         */
 	public void delete(int n) {
 		Node<T> temp = root;
 		if (lenght==1) {
@@ -88,7 +104,12 @@ public class Linked_List<T> {
 			}
 		}
 		}
-	
+	/**
+         * metodo que verifica que un objeto este dentro de una lista
+         * @param conex
+         * @param listaconex
+         * @return 
+         */
 		
 	public boolean contains(Linked_List conex, Linked_List listaconex) {
             Linked_List conexx = new Linked_List();
@@ -99,6 +120,12 @@ public class Linked_List<T> {
 		}
 		return false;
 	}
+        /**metodo que saca la interseccion de dos listas de objetos
+         * 
+         * @param lista1
+         * @param lista2
+         * @param lista3 
+         */
 
         public void interseccion(Linked_List lista1,Linked_List lista2,Linked_List lista3){
                 Node temp1 =  null;
@@ -113,6 +140,12 @@ public class Linked_List<T> {
                         
                 }return ;
         }
+        /**
+         * metodo que comprueba la igualdad del punto de partida y punto de llegada de la conexion sin importar el orden que tengan
+         * @param conex1
+         * @param conex2
+         * @return 
+         */
         public boolean isequal(Linked_List conex1, Linked_List conex2){
             if ((conex1.getNode(0).getData() == conex2.getNode(0).getData()) &&(conex1.getNode(1).getData() == conex2.getNode(1).getData())){
                 return true;
@@ -127,12 +160,23 @@ public class Linked_List<T> {
             
             
         }
+        /**
+         * metodo que concatena dos listas diferentes en una sola
+         * @param lista1
+         * @param lista2
+         * @return 
+         */
         public Linked_List concatenar(Linked_List lista1, Linked_List lista2){
             for(int i=0; i<lista2.getLenght();i++){
                 lista1.append(lista2.getNode(i).getData());
             }
             return lista1;
         }
+        /**
+         * overload del metodo delete(), que elimina el nodo de la lista
+         * @param data
+         * @param lista 
+         */
         public void delete(Object data,Linked_List lista){
             for(int i = 0; i < lista.lenght; i++){
                 if(lista.getNode(i).getData()== data){
@@ -141,4 +185,5 @@ public class Linked_List<T> {
                     
             }System.out.println("Done");
         }
+        
 }
