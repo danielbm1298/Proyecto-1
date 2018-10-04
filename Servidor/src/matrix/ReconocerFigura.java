@@ -6,12 +6,27 @@ public class ReconocerFigura {
 		
 	}
 
-	public void buscar(Linked_List<Linked_List> conexiones,Linked_List<String> linea) {
+	public Pila buscar(Linked_List<Linked_List> conexiones,Linked_List<String> linea) {
 		Pila pivot=new Pila();
 		String llegada =(String) linea.getNode(1).getData();
 		String primer_pivot = new String();
 		primer_pivot =linea.getNode(0).getData();
 		pivot.push(primer_pivot);
+		Linked_List<String> prueba =new Linked_List();
+		prueba.append("A2");
+		prueba.append("A1");
+
+		Linked_List<String> prueba2 =new Linked_List();
+		prueba2.append("A2");
+		prueba2.append("A1");
+
+		if (prueba==prueba2) {
+			System.out.println("SI SON IGUALES");
+		}else {
+			System.out.println("no son iguales QUE PICHA");
+			
+		}
+
 
 
 	
@@ -33,7 +48,7 @@ public class ReconocerFigura {
 			if (pivot.peek()==llegada) {
 				System.out.println("termino");
 				pivot.printPila();
-				return;
+				return pivot;
 			}
 			Linked_List<Linked_List> seleccionado =(Linked_List) conexiones.getNode(indice_lista).getData();
 
@@ -80,6 +95,7 @@ public class ReconocerFigura {
 			System.out.println("imprimendo figura completa");
 		}
 		//Eliminar el elemento de la lista del pivot y poner el indice en 0
+		return pivot;
 
 	
 
@@ -87,4 +103,38 @@ public class ReconocerFigura {
 
 	
 	}
+	
+	public Linked_List conex_en_fig(Pila pila) {
+		Linked_List<Linked_List> conex_de_fig =new Linked_List();
+		String primer_elemento=(String) pila.peek();
+		while (pila.len()!=1) {
+			Linked_List<String> elem =new Linked_List();
+			elem.append((String) pila.peek());
+			System.out.println("añadiendo " +pila.peek());
+
+			pila.pop();
+			
+			elem.append((String) pila.peek());
+			System.out.println("añadiendo " +pila.peek());
+			conex_de_fig.append(elem);
+			System.out.println("añadiendo a la principal");
+			elem.printList();
+
+			
+		}
+		Linked_List<String> ultima =new Linked_List();
+		ultima.append(primer_elemento);
+		System.out.println(primer_elemento);
+		ultima.append((String) pila.peek());
+		System.out.println(pila.peek());
+
+		conex_de_fig.append(ultima);
+		
+		conex_de_fig.printList();
+		System.out.println("LISTA YA LISTA");
+		return conex_de_fig;
+	}
+	
+
+	
 }
